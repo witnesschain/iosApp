@@ -23,6 +23,12 @@ class PreviewViewController: UIViewController {
         
     }
     @IBAction func saveButton_TouchUpInside(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "iOScreator", message:
+            "Hello, world!", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
