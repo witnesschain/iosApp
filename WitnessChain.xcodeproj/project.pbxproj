@@ -14,7 +14,6 @@
 		B3119F972071E903006A329B /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3119F962071E903006A329B /* PreviewViewController.swift */; };
 		B35386FE20722DEB00254A96 /* IconImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B35386FD20722DEB00254A96 /* IconImages.xcassets */; };
 		C374259B881C1475CC0247AE /* Pods_WitnessChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFC531DA1E627FE39FE32BB /* Pods_WitnessChain.framework */; };
-		FC7012DC2072BAB200C6F097 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC7012DB2072BAB200C6F097 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 		B3119F962071E903006A329B /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		B35386FD20722DEB00254A96 /* IconImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = IconImages.xcassets; sourceTree = "<group>"; };
 		E398F44202024E6AD6DAF221 /* Pods-WitnessChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WitnessChain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WitnessChain/Pods-WitnessChain.debug.xcconfig"; sourceTree = "<group>"; };
-		FC7012DB2072BAB200C6F097 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +73,6 @@
 			children = (
 				B35386FD20722DEB00254A96 /* IconImages.xcassets */,
 				B3119F822071E027006A329B /* AppDelegate.swift */,
-				FC7012DB2072BAB200C6F097 /* GoogleService-Info.plist */,
 				B3119F842071E027006A329B /* ViewController.swift */,
 				B3119F862071E027006A329B /* Main.storyboard */,
 				B3119F962071E903006A329B /* PreviewViewController.swift */,
@@ -155,7 +152,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3119F8D2071E029006A329B /* LaunchScreen.storyboard in Resources */,
-				FC7012DC2072BAB200C6F097 /* GoogleService-Info.plist in Resources */,
 				B3119F882071E027006A329B /* Main.storyboard in Resources */,
 				B35386FE20722DEB00254A96 /* IconImages.xcassets in Resources */,
 			);
@@ -360,7 +356,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 92K582PFB7;
+				DEVELOPMENT_TEAM = YHQKGLGHHD;
 				INFOPLIST_FILE = WitnessChain/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -381,7 +377,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 92K582PFB7;
+				DEVELOPMENT_TEAM = YHQKGLGHHD;
 				INFOPLIST_FILE = WitnessChain/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
