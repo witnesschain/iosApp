@@ -14,6 +14,7 @@
 		B3119F972071E903006A329B /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3119F962071E903006A329B /* PreviewViewController.swift */; };
 		B35386FE20722DEB00254A96 /* IconImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B35386FD20722DEB00254A96 /* IconImages.xcassets */; };
 		C374259B881C1475CC0247AE /* Pods_WitnessChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFC531DA1E627FE39FE32BB /* Pods_WitnessChain.framework */; };
+		FCEEC0672072CD23009BE41D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCEEC0662072CD22009BE41D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B3119F962071E903006A329B /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		B35386FD20722DEB00254A96 /* IconImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = IconImages.xcassets; sourceTree = "<group>"; };
 		E398F44202024E6AD6DAF221 /* Pods-WitnessChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WitnessChain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WitnessChain/Pods-WitnessChain.debug.xcconfig"; sourceTree = "<group>"; };
+		FCEEC0662072CD22009BE41D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "WitnessChain/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		B3119F762071E026006A329B = {
 			isa = PBXGroup;
 			children = (
+				FCEEC0662072CD22009BE41D /* GoogleService-Info.plist */,
 				B3119F812071E027006A329B /* WitnessChain */,
 				B3119F802071E027006A329B /* Products */,
 				B7F89B9E6D735DFF3A1E2D81 /* Pods */,
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3119F8D2071E029006A329B /* LaunchScreen.storyboard in Resources */,
+				FCEEC0672072CD23009BE41D /* GoogleService-Info.plist in Resources */,
 				B3119F882071E027006A329B /* Main.storyboard in Resources */,
 				B35386FE20722DEB00254A96 /* IconImages.xcassets in Resources */,
 			);
