@@ -34,6 +34,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Save photo evidence to Camera Roll</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

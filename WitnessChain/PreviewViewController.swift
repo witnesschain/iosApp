@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class PreviewViewController: UIViewController {
     @IBOutlet var photo: UIImageView!
     var image: UIImage!
+
+    let storage = Storage.storage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         photo.image = self.image
@@ -24,11 +28,14 @@ class PreviewViewController: UIViewController {
     }
     @IBAction func saveButton_TouchUpInside(_ sender: Any) {
         
-        let alertController = UIAlertController(title: "iOScreator", message:
-            "Hello, world!", preferredStyle: UIAlertControllerStyle.alert)
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        
+        let alertController = UIAlertController(title: "WitnessChain", message:
+            "Image evidence saved to Camera Roll", preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
