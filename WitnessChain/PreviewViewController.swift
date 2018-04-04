@@ -26,6 +26,18 @@ class PreviewViewController: UIViewController {
         dismiss(animated: true, completion: nil)
         
     }
+    @IBAction func uploadButton_TouchUpInside(_ sender: Any) {
+        
+        
+        
+        let alertController = UIAlertController(title: "WitnessChain", message:
+            "Image uploaded to Server", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
     @IBAction func saveButton_TouchUpInside(_ sender: Any) {
         
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
