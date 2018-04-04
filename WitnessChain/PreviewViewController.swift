@@ -28,7 +28,7 @@ class PreviewViewController: UIViewController {
     }
     @IBAction func uploadButton_TouchUpInside(_ sender: Any) {
         
-        let imageName:String = String("\(Calendar.current).png")
+        let imageName:String = String("image.png")
         
         let storageRef = storage.reference().child("evidence").child(imageName)
         if let uploadData = UIImagePNGRepresentation(image!) {
@@ -37,6 +37,7 @@ class PreviewViewController: UIViewController {
                 , completion: { (metadata, error) in
                     if error != nil {
                         print("error")
+                        print(error)
                         return
                     }else{
                     }
