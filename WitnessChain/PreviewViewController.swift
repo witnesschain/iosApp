@@ -28,7 +28,29 @@ class PreviewViewController: UIViewController {
     }
     @IBAction func uploadButton_TouchUpInside(_ sender: Any) {
         
+        let imageName:String = String("\(Calendar.current).png")
         
+        let storageRef = storage.reference().child("evidence").child(imageName)
+        if let uploadData = UIImagePNGRepresentation(image!) {
+        
+            storageRef.putData(uploadData, metadata: nil
+                , completion: { (metadata, error) in
+                    if error != nil {
+                        print("error")
+                        return
+                    }else{
+                    }
+                    
+                    let strPic:String = (metadata?.downloadURL()?.absoluteString)!
+                    
+                    print(metadata!)
+                    //self.imagePath = (metadata?.downloadURL()?.absoluteString)!
+                    //self.sendMessageOnServer()
+                    print("\n\n\n\n\n\n ===download url : \(strPic)")
+                    
+            })
+            
+        }
         
         let alertController = UIAlertController(title: "WitnessChain", message:
             "Image uploaded to Server", preferredStyle: UIAlertControllerStyle.alert)
