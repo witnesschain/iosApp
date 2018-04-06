@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>WitnessChain requires location access for identifying parking ticket jurisdictions</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>WitnessChain requires location access for identifying parking ticket jurisdictions</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -34,6 +38,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>WitnessChain requires location access for identifying parking ticket jurisdictions</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Save photo evidence to Camera Roll</string>
 	<key>UISupportedInterfaceOrientations</key>

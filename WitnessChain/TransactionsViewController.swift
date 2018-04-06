@@ -1,8 +1,8 @@
 //
-//  PreviewViewController.swift
+//  TransactionsViewController.swift
 //  WitnessChain
 //
-//  Created by Kevin  Sadhu on 4/2/18.
+//  Created by Dhruv Gupta on 4/5/18.
 //  Copyright © 2018 Kevin  Sadhu. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import CoreLocation
 
-class PreviewViewController: UIViewController, CLLocationManagerDelegate {
+class TransactionsViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var photo: UIImageView!
     var image: UIImage!
     var userLocation: CLLocation!
@@ -22,7 +22,7 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         photo.image = self.image
-
+        
         locationManager.delegate = self;
         locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -61,7 +61,7 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
         print("error:: \(error.localizedDescription)")
         
     }
-
+    
     
     @IBAction func dismissButton_TouchUpInside(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -71,7 +71,7 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func uploadButton_TouchUpInside(_ sender: Any) {
         
         let curtime:Double = NSDate().timeIntervalSince1970
-
+        
         // TODO: SHOW LOADING THING OR PROGRESS BAR UNTIL YOU HAVE LOCATION/WHILE UPLOAD IS HAPPENING
         
         print("Found user's location: \(userLocation) and time \(curtime)")
@@ -127,15 +127,15 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
