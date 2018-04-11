@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         setupPreviewLayer()
         startRunningCaptureSession()
         
-        let url = URL(string: "http://10.251.176.44:3000/basic_square")!
+        let url = URL(string: "http://10.252.82.57:3000/fancy_square")!
         
         let parameters = ["x": 14]
         
