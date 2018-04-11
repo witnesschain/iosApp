@@ -73,7 +73,7 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
                         // TODO: REPLACE WITH REAL PARAMS
 
                     
-                        let parameters = ["image": "14",
+                        let parameters = ["image": strPic,
                                           "creator_address": "0x821aEa9a577a9b44299B9c15c88cf3087F3b5544",
                                           "receiver_address": "0x0d1d4e623D10F9FBA5Db95830F7d3839406C6AF2"
                                           ]
