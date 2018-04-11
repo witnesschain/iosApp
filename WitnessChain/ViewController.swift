@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     var backCamera: AVCaptureDevice?
     var frontCamera: AVCaptureDevice?
     var currentCamera: AVCaptureDevice?
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var photoOutput: AVCapturePhotoOutput?
     
@@ -31,30 +32,6 @@ class ViewController: UIViewController {
         setupInputOutput()
         setupPreviewLayer()
         startRunningCaptureSession()
-        
-        let url = URL(string: "http://10.252.82.57:3000/fancy_square")!
-        
-        let parameters = ["x": 14]
-        
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            
-            if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
-            }
-            
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
-                let alertController = UIAlertController(title: "WitnessChain", message:
-                    utf8Text, preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-                
-                self.present(alertController, animated: true, completion: nil)
-
-            }
-        }
         
         // Do any additional setup after loading the view, typically from a nib.
         

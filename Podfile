@@ -10,5 +10,6 @@ target 'WitnessChain' do
   pod 'Firebase/Core'
   pod 'Firebase/Storage'
   pod 'Alamofire'
+  pod 'SwiftLocation'
   
 end

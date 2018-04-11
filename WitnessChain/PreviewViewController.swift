@@ -9,59 +9,28 @@
 import UIKit
 import Firebase
 import CoreLocation
+import Alamofire
+import SwiftLocation
 
 class PreviewViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var photo: UIImageView!
     var image: UIImage!
-    var userLocation: CLLocation!
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     let storage = Storage.storage()
-    
-    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         photo.image = self.image
-
-        locationManager.delegate = self;
-        locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        // 1. status is not determined
-        if CLLocationManager.authorizationStatus() == .notDetermined {
-            locationManager.requestAlwaysAuthorization()
-        }
-            // 2. authorization were denied
-        else if CLLocationManager.authorizationStatus() == .denied {
-            let alertController = UIAlertController(title: "WitnessChain", message:
-                "Location services were previously denied. Please enable location services for this app in Settings.", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-            
-            self.present(alertController, animated: true, completion: nil)
-        }
-            // 3. we do have authorization
-        else {
-            locationManager.requestLocation()
-        }
-    }
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            userLocation = location
-            print("Found user's location: \(location)")
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error){
-        
-        print("error:: \(error.localizedDescription)")
-        
-    }
+        Locator.requestAuthorizationIfNeeded()
 
+    }
     
     @IBAction func dismissButton_TouchUpInside(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -72,42 +41,75 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
         
         let curtime:Double = NSDate().timeIntervalSince1970
 
-        // TODO: SHOW LOADING THING OR PROGRESS BAR UNTIL YOU HAVE LOCATION/WHILE UPLOAD IS HAPPENING
+        let progressHUD = ProgressHUD(text: "Uploading")
+        self.view.addSubview(progressHUD)
         
-        print("Found user's location: \(userLocation) and time \(curtime)")
+        SwiftLocation.Locator.currentPosition(accuracy: .city, timeout: nil, onSuccess: { userLocation in
         
-        let imageName:String = String("\(curtime).jpg")
+            print("Have user's location: \(userLocation) and time \(curtime)")
         
-        let storageRef = storage.reference().child("evidence").child(imageName)
-        if let uploadData = UIImageJPEGRepresentation(image!, 0.75) {
-            
-            storageRef.putData(uploadData, metadata: nil
-                , completion: { (metadata, error) in
-                    if error != nil {
-                        print("error")
-                        print(error!)
-                        return
-                    }else{
-                    }
+            let imageName:String = String("\(curtime).jpg")
+        
+            let storageRef = self.storage.reference().child("evidence").child(imageName)
+            if let uploadData = UIImageJPEGRepresentation(self.image!, 0.75) {
+                
+                storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                        if error != nil {
+                            print("error")
+                            print(error!)
+                            return
+                        }else{
+                        }
                     
-                    let strPic:String = (metadata?.downloadURL()?.absoluteString)!
+                        let strPic:String = (metadata?.downloadURL()?.absoluteString)!
                     
-                    print(metadata!)
-                    //self.imagePath = (metadata?.downloadURL()?.absoluteString)!
-                    //self.sendMessageOnServer()
-                    print("\n\n ===download url : \(strPic)")
+                        print(metadata!)
+                        //self.imagePath = (metadata?.downloadURL()?.absoluteString)!
+                        //self.sendMessageOnServer()
+                        print("\n\n ===download url : \(strPic)")
                     
-            })
-            
+                        let url = URL(string: self.appDelegate.baseUrl + "/new")!
+                    
+                        // TODO: REPLACE WITH REAL PARAMS
+
+                    
+                        let parameters = ["image": "14",
+                                          "creator_address": "0x821aEa9a577a9b44299B9c15c88cf3087F3b5544",
+                                          "receiver_address": "0x0d1d4e623D10F9FBA5Db95830F7d3839406C6AF2"
+                                          ]
+                    
+                        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+                            print("Request: \(String(describing: response.request))")   // original url request
+                            print("Response: \(String(describing: response.response))") // http url response
+                            print("Result: \(response.result)")                         // response serialization result
+                            
+                            if let json = response.result.value {
+                                print("JSON: \(json)") // serialized json response
+                            }
+                            
+                            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                                print("Data: \(utf8Text)") // original server data as UTF8 string
+//                                self.dismiss(animated: true, completion: nil) // dismiss the image preview somehow
+                                let alertController = UIAlertController(title: "WitnessChain", message:
+                                    "Image uploaded to Server: \(strPic)", preferredStyle: UIAlertControllerStyle.alert)
+                                alertController.addAction(UIAlertAction(title: "Great!", style: UIAlertActionStyle.destructive, handler: {
+                                    action in                                    self.navigationController?.popViewController(animated: true)
+                                    
+                                        self.dismiss(animated: true, completion: nil)
+                                    }))
+                                
+                                self.present(alertController, animated: true, completion: nil)
+                                
+                                progressHUD.hide()
+                            }
+                        }
+                    
+                })
+                
+            }
+        }) { (err, last) -> (Void) in
+            print("Failed to get location: \(err)")
         }
-        
-        let alertController = UIAlertController(title: "WitnessChain", message:
-            "Image uploaded to Server", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-        
-        self.present(alertController, animated: true, completion: nil)
-        
-        dismiss(animated: true, completion: nil)
         
     }
     

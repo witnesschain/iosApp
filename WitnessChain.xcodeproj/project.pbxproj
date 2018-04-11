@@ -14,6 +14,7 @@
 		B3119F972071E903006A329B /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3119F962071E903006A329B /* PreviewViewController.swift */; };
 		B35386FE20722DEB00254A96 /* IconImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B35386FD20722DEB00254A96 /* IconImages.xcassets */; };
 		D7CAA9A22E6CA850330EE35E /* Pods_WitnessChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BD5457E5BDE1AA7C622751 /* Pods_WitnessChain.framework */; };
+		FC2E8202207E8B54002D04C7 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E8201207E8B54002D04C7 /* ProgressHUD.swift */; };
 		FC5E208B2077273F001EBA83 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E208A2077273F001EBA83 /* TransactionsViewController.swift */; };
 		FC5E208D207738B4001EBA83 /* ScrollPagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E208C207738B4001EBA83 /* ScrollPagesController.swift */; };
 		FCEEC0672072CD23009BE41D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCEEC0662072CD22009BE41D /* GoogleService-Info.plist */; };
@@ -31,6 +32,7 @@
 		B3119F962071E903006A329B /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		B35386FD20722DEB00254A96 /* IconImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = IconImages.xcassets; sourceTree = "<group>"; };
 		F9BD5457E5BDE1AA7C622751 /* Pods_WitnessChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WitnessChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC2E8201207E8B54002D04C7 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		FC5E208A2077273F001EBA83 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		FC5E208C207738B4001EBA83 /* ScrollPagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPagesController.swift; sourceTree = "<group>"; };
 		FCEEC0662072CD22009BE41D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "WitnessChain/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				FC5E208C207738B4001EBA83 /* ScrollPagesController.swift */,
 				B3119F8B2071E029006A329B /* LaunchScreen.storyboard */,
 				B3119F8E2071E029006A329B /* Info.plist */,
+				FC2E8201207E8B54002D04C7 /* ProgressHUD.swift */,
 			);
 			path = WitnessChain;
 			sourceTree = "<group>";
@@ -198,6 +201,8 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -205,6 +210,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,6 +231,7 @@
 				FC5E208B2077273F001EBA83 /* TransactionsViewController.swift in Sources */,
 				B3119F972071E903006A329B /* PreviewViewController.swift in Sources */,
 				FC5E208D207738B4001EBA83 /* ScrollPagesController.swift in Sources */,
+				FC2E8202207E8B54002D04C7 /* ProgressHUD.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
