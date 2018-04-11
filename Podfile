@@ -8,7 +8,7 @@ target 'WitnessChain' do
   # Pods for WitnessChain
 
   pod 'Firebase/Core'
-  pod 'FirebaseUI'
+  pod 'FirebaseUI/Auth'
   pod 'Firebase/Storage'
   pod 'Alamofire'
   pod 'SwiftLocation'

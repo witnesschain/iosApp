@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B3119F832071E027006A329B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3119F822071E027006A329B /* AppDelegate.swift */; };
-		B3119F852071E027006A329B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3119F842071E027006A329B /* ViewController.swift */; };
+		B3119F852071E027006A329B /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3119F842071E027006A329B /* CameraViewController.swift */; };
 		B3119F882071E027006A329B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3119F862071E027006A329B /* Main.storyboard */; };
 		B3119F8D2071E029006A329B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3119F8B2071E029006A329B /* LaunchScreen.storyboard */; };
 		B3119F972071E903006A329B /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3119F962071E903006A329B /* PreviewViewController.swift */; };
@@ -16,6 +16,7 @@
 		D7CAA9A22E6CA850330EE35E /* Pods_WitnessChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BD5457E5BDE1AA7C622751 /* Pods_WitnessChain.framework */; };
 		FC2E8202207E8B54002D04C7 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E8201207E8B54002D04C7 /* ProgressHUD.swift */; };
 		FC2E8204207EA251002D04C7 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E8203207EA250002D04C7 /* AuthViewController.swift */; };
+		FC2E8206207EB7C3002D04C7 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E8205207EB7C3002D04C7 /* WalletViewController.swift */; };
 		FC5E208B2077273F001EBA83 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E208A2077273F001EBA83 /* TransactionsViewController.swift */; };
 		FC5E208D207738B4001EBA83 /* ScrollPagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E208C207738B4001EBA83 /* ScrollPagesController.swift */; };
 		FCEEC0672072CD23009BE41D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCEEC0662072CD22009BE41D /* GoogleService-Info.plist */; };
@@ -26,7 +27,7 @@
 		9A8ECDE2AB5092361551CA62 /* Pods-WitnessChain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WitnessChain.release.xcconfig"; path = "Pods/Target Support Files/Pods-WitnessChain/Pods-WitnessChain.release.xcconfig"; sourceTree = "<group>"; };
 		B3119F7F2071E027006A329B /* WitnessChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WitnessChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3119F822071E027006A329B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B3119F842071E027006A329B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B3119F842071E027006A329B /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B3119F872071E027006A329B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B3119F8C2071E029006A329B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3119F8E2071E029006A329B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,6 +36,7 @@
 		F9BD5457E5BDE1AA7C622751 /* Pods_WitnessChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WitnessChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2E8201207E8B54002D04C7 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		FC2E8203207EA250002D04C7 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		FC2E8205207EB7C3002D04C7 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		FC5E208A2077273F001EBA83 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		FC5E208C207738B4001EBA83 /* ScrollPagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPagesController.swift; sourceTree = "<group>"; };
 		FCEEC0662072CD22009BE41D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "WitnessChain/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -93,8 +95,9 @@
 			children = (
 				B35386FD20722DEB00254A96 /* IconImages.xcassets */,
 				B3119F822071E027006A329B /* AppDelegate.swift */,
-				B3119F842071E027006A329B /* ViewController.swift */,
+				B3119F842071E027006A329B /* CameraViewController.swift */,
 				B3119F862071E027006A329B /* Main.storyboard */,
+				FC2E8205207EB7C3002D04C7 /* WalletViewController.swift */,
 				FC2E8203207EA250002D04C7 /* AuthViewController.swift */,
 				FC5E208A2077273F001EBA83 /* TransactionsViewController.swift */,
 				B3119F962071E903006A329B /* PreviewViewController.swift */,
@@ -203,47 +206,19 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WitnessChain/Pods-WitnessChain-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,24 +234,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WitnessChain/Pods-WitnessChain-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseTwitterAuthUI.bundle",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseTwitterAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -290,11 +251,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3119F852071E027006A329B /* ViewController.swift in Sources */,
+				B3119F852071E027006A329B /* CameraViewController.swift in Sources */,
 				B3119F832071E027006A329B /* AppDelegate.swift in Sources */,
 				FC5E208B2077273F001EBA83 /* TransactionsViewController.swift in Sources */,
 				FC2E8204207EA251002D04C7 /* AuthViewController.swift in Sources */,
 				B3119F972071E903006A329B /* PreviewViewController.swift in Sources */,
+				FC2E8206207EB7C3002D04C7 /* WalletViewController.swift in Sources */,
 				FC5E208D207738B4001EBA83 /* ScrollPagesController.swift in Sources */,
 				FC2E8202207E8B54002D04C7 /* ProgressHUD.swift in Sources */,
 			);
