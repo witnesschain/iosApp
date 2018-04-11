@@ -50,6 +50,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Firebase/Auth
   - Firebase/Core
   - Firebase/Storage
   - FirebaseUI/Auth
@@ -86,6 +87,6 @@ SPEC CHECKSUMS:
   SwiftLocation: 8f5ef4f510a45e43239de57a3145b3669301e898
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: e9f50559e62c7c1c1501bf88dcdd286ed8b3c06d
+PODFILE CHECKSUM: aa5defa5574947b47b0fdb747bca5fa5b4db6e5e
 
 COCOAPODS: 1.5.0.beta.1

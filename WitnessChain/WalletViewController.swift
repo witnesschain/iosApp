@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Firebase
+import FirebaseAuthUI
 
 class WalletViewController: UIViewController {
 

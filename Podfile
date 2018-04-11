@@ -6,7 +6,7 @@ target 'WitnessChain' do
   use_frameworks!
 
   # Pods for WitnessChain
-
+  
   pod 'Firebase/Core'
   pod 'FirebaseUI/Auth'
   pod 'Firebase/Storage'

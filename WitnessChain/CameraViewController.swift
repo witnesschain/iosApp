@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import Alamofire
 import Firebase
+import FirebaseAuthUI
 
 class CameraViewController: UIViewController {
     

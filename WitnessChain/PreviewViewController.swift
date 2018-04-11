@@ -63,17 +63,21 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
                     
                         let strPic:String = (metadata?.downloadURL()?.absoluteString)!
                     
+                        let imgname:String = (metadata?.name)!
+                    
                         print(metadata!)
                         //self.imagePath = (metadata?.downloadURL()?.absoluteString)!
                         //self.sendMessageOnServer()
                         print("\n\n ===download url : \(strPic)")
+                    
+                        print("\n\n ===image name : \(imgname)")
                     
                         let url = URL(string: self.appDelegate.baseUrl + "/new")!
                     
                         // TODO: REPLACE WITH REAL PARAMS
 
                     
-                        let parameters = ["image": strPic,
+                        let parameters = ["image": imgname,
                                           "creator_address": "0x821aEa9a577a9b44299B9c15c88cf3087F3b5544",
                                           "receiver_address": "0x0d1d4e623D10F9FBA5Db95830F7d3839406C6AF2"
                                           ]
