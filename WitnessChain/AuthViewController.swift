@@ -16,6 +16,8 @@ class AuthViewController: UIViewController, FUIAuthDelegate {
     fileprivate(set) var authUI: FUIAuth? //only set internally but get externally
     fileprivate(set) var authStateListenerHandle: AuthStateDidChangeListenerHandle?
     
+    var ref: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,12 +26,33 @@ class AuthViewController: UIViewController, FUIAuthDelegate {
         self.authUI = FUIAuth.defaultAuthUI()
         self.authUI?.delegate = self
         
+        ref = Database.database().reference()
+        
         self.authStateListenerHandle = self.auth?.addStateDidChangeListener { (auth, user) in
             guard user != nil else {
                 self.loginAction(sender: self)
                 return
             }
-            self.performSegue(withIdentifier: "loggedin", sender: nil)
+        self.ref.child("users").child(user!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                // Get user value
+                let value = snapshot.value as? NSDictionary
+                let address = value?["address"] as? String ?? ""
+                print(address)
+                if(address == ""){
+                    self.performSegue(withIdentifier: "authtouserinfo", sender: nil)
+
+                } else {
+                    self.performSegue(withIdentifier: "loggedin", sender: nil)
+                    print("banana")
+                }
+            
+
+                // ...
+            }) { (error) in
+                print(error.localizedDescription)
+                self.performSegue(withIdentifier: "authtouserinfo", sender: nil)
+            }
+            
         }
     }
     @IBAction func loginAction(sender: AnyObject) {

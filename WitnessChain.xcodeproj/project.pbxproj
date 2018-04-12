@@ -17,6 +17,7 @@
 		FC2E8202207E8B54002D04C7 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E8201207E8B54002D04C7 /* ProgressHUD.swift */; };
 		FC2E8204207EA251002D04C7 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E8203207EA250002D04C7 /* AuthViewController.swift */; };
 		FC2E8206207EB7C3002D04C7 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E8205207EB7C3002D04C7 /* WalletViewController.swift */; };
+		FC4C2081207EEB930049AE4B /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C2080207EEB930049AE4B /* UserInfoViewController.swift */; };
 		FC5E208B2077273F001EBA83 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E208A2077273F001EBA83 /* TransactionsViewController.swift */; };
 		FC5E208D207738B4001EBA83 /* ScrollPagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E208C207738B4001EBA83 /* ScrollPagesController.swift */; };
 		FCEEC0672072CD23009BE41D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCEEC0662072CD22009BE41D /* GoogleService-Info.plist */; };
@@ -37,6 +38,7 @@
 		FC2E8201207E8B54002D04C7 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		FC2E8203207EA250002D04C7 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		FC2E8205207EB7C3002D04C7 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		FC4C2080207EEB930049AE4B /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		FC5E208A2077273F001EBA83 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		FC5E208C207738B4001EBA83 /* ScrollPagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPagesController.swift; sourceTree = "<group>"; };
 		FCEEC0662072CD22009BE41D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "WitnessChain/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				B3119F822071E027006A329B /* AppDelegate.swift */,
 				B3119F842071E027006A329B /* CameraViewController.swift */,
 				B3119F862071E027006A329B /* Main.storyboard */,
+				FC4C2080207EEB930049AE4B /* UserInfoViewController.swift */,
 				FC2E8205207EB7C3002D04C7 /* WalletViewController.swift */,
 				FC2E8203207EA250002D04C7 /* AuthViewController.swift */,
 				FC5E208A2077273F001EBA83 /* TransactionsViewController.swift */,
@@ -210,6 +213,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -219,6 +223,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +260,7 @@
 				B3119F832071E027006A329B /* AppDelegate.swift in Sources */,
 				FC5E208B2077273F001EBA83 /* TransactionsViewController.swift in Sources */,
 				FC2E8204207EA251002D04C7 /* AuthViewController.swift in Sources */,
+				FC4C2081207EEB930049AE4B /* UserInfoViewController.swift in Sources */,
 				B3119F972071E903006A329B /* PreviewViewController.swift in Sources */,
 				FC2E8206207EB7C3002D04C7 /* WalletViewController.swift in Sources */,
 				FC5E208D207738B4001EBA83 /* ScrollPagesController.swift in Sources */,

@@ -11,7 +11,7 @@ import UIKit
 class ScrollPagesController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     var pages = [UIViewController]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
