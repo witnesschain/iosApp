@@ -20,9 +20,14 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
     
     let storage = Storage.storage()
     
+    let user = Auth.auth().currentUser
+    var ref: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         photo.image = self.image
+        
+        ref = Database.database().reference()
         
         // Do any additional setup after loading the view.
     }
@@ -74,13 +79,13 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
                     
                         let url = URL(string: self.appDelegate.baseUrl + "/new")!
                     
-                        // TODO: REPLACE WITH REAL PARAMS
-
+                        // TODO: REPLACE WITH REAL PARAMS like ref.child("users").child(user!.uid) address
                     
                         let parameters = ["image": imgname,
                                           "creator_address": "0x821aEa9a577a9b44299B9c15c88cf3087F3b5544",
                                           "receiver_address": "0x0d1d4e623D10F9FBA5Db95830F7d3839406C6AF2"
                                           ]
+                    ref.child("users").child(user!.uid).child("evidences").child(imgname).setValue(imgname)
                     
                         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
                             print("Request: \(String(describing: response.request))")   // original url request
