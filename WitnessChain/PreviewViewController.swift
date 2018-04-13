@@ -85,7 +85,7 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
                                           "creator_address": "0x821aEa9a577a9b44299B9c15c88cf3087F3b5544",
                                           "receiver_address": "0x0d1d4e623D10F9FBA5Db95830F7d3839406C6AF2"
                                           ]
-                    ref.child("users").child(user!.uid).child("evidences").child(imgname).setValue(imgname)
+                    self.ref.child("users").child(self.user!.uid).child("evidences").child(imgname).setValue(imgname)
                     
                         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
                             print("Request: \(String(describing: response.request))")   // original url request
