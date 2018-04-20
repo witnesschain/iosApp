@@ -44,7 +44,7 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func uploadButton_TouchUpInside(_ sender: Any) {
         
-        let curtime:Double = NSDate().timeIntervalSince1970
+        let curtime:Int = Int(NSDate().timeIntervalSince1970*10000)
 
         let progressHUD = ProgressHUD(text: "Uploading")
         self.view.addSubview(progressHUD)
@@ -79,13 +79,23 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
                     
                         let url = URL(string: self.appDelegate.baseUrl + "/new")!
                     
+                        let images = [imgname]
+                    
                         // TODO: REPLACE WITH REAL PARAMS like ref.child("users").child(user!.uid) address
                     
-                        let parameters = ["image": imgname,
+                        let parameters : [String:Any] = ["clear_images": images,
+                                          "blurred_images": images,
+                                          "latitude": Int(userLocation.coordinate.latitude*8),
+                                          "longitude": Int(userLocation.coordinate.longitude*8),
+                                          "price": "1000",
+                                          "description": "parking",
                                           "creator_address": "0x821aEa9a577a9b44299B9c15c88cf3087F3b5544",
-                                          "receiver_address": "0x0d1d4e623D10F9FBA5Db95830F7d3839406C6AF2"
-                                          ]
-                    self.ref.child("users").child(self.user!.uid).child("evidences").child(imgname).setValue(imgname)
+                                          "receiver_address": "0x0d1d4e623D10F9FBA5Db95830F7d3839406C6AF2",
+                                          "violation_type": 1
+                            ]
+                        let idx = imgname.index(imgname.endIndex, offsetBy: -4)
+                        let imgshort = String(imgname[..<idx])
+                    self.ref.child("users").child(self.user!.uid).child("evidences").child(imgshort).setValue(imgname)
                     
                         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
                             print("Request: \(String(describing: response.request))")   // original url request
