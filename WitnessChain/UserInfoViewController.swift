@@ -17,10 +17,9 @@ class UserInfoViewController: UIViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    @IBOutlet weak var PrivateKeyLabel: UILabel!
     let user = Auth.auth().currentUser
     @IBOutlet weak var PublicKeyField: UITextField!
-    
-    @IBOutlet weak var PrivateKeyField: UITextField!
     
     @IBOutlet weak var AddressField: UITextField!
     
@@ -31,7 +30,8 @@ class UserInfoViewController: UIViewController {
         
         // TODO: ACTUALLY POPULATE THESE FIELDS WITH REAL STUFF
         let url = URL(string: self.appDelegate.baseUrl + "/address")! // calling the address function from the API
-        let parameters = ["password": "harshalkevin"]
+        let pubKey = self.PublicKeyField.text
+        let parameters = ["password": pubKey]
         
         
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
@@ -41,6 +41,9 @@ class UserInfoViewController: UIViewController {
             
             if let json = response.result.value {
                 print("JSON: \(json)") // serialized json response
+                self.PublicKeyField.text = pubKey
+                self.PrivateKeyLabel.text = json[privatekey]
+                self.AddressField.text = json[address]
             }
             
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
@@ -49,11 +52,6 @@ class UserInfoViewController: UIViewController {
             }
         }
         
-        PublicKeyField.text = "something random"
-        
-        PrivateKeyField.text = "something more random"
-        
-        AddressField.text = "1201 Mass Ave"
         
     }
     
@@ -65,7 +63,7 @@ class UserInfoViewController: UIViewController {
         
         ref.child("users").child(user!.uid).setValue([
             "publickey": PublicKeyField.text!,
-            "privatekey": PrivateKeyField.text!,
+            "privatekey": PrivateKey.text!,
             "address": AddressField.text!,
             "permission": 1
             ])
