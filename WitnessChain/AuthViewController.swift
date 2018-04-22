@@ -17,6 +17,7 @@ class AuthViewController: UIViewController, FUIAuthDelegate {
     fileprivate(set) var authStateListenerHandle: AuthStateDidChangeListenerHandle?
     
     var ref: DatabaseReference!
+    var address: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +37,9 @@ class AuthViewController: UIViewController, FUIAuthDelegate {
         self.ref.child("users").child(user!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
                 // Get user value
                 let value = snapshot.value as? NSDictionary
-                let address = value?["address"] as? String ?? ""
-                print(address)
-                if(address == ""){
+                self.address = value?["address"] as? String ?? ""
+                print(self.address)
+                if(self.address == ""){
                     self.performSegue(withIdentifier: "authtouserinfo", sender: nil)
 
                 } else {
@@ -65,7 +66,13 @@ class AuthViewController: UIViewController, FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
         guard let authError = error else {
             print("auth")
-            performSegue(withIdentifier: "loggedin", sender: nil)
+            if(self.address == ""){
+                self.performSegue(withIdentifier: "authtouserinfo", sender: nil)
+                
+            } else {
+                self.performSegue(withIdentifier: "loggedin", sender: nil)
+                print("banana")
+            }
             return
         }
         
