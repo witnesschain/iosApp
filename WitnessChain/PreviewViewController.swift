@@ -29,6 +29,7 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
         print ("------")
         print (self.image)
         print (photo.image)
+        print(self.edited_images)
         print ("------")
         photo.image = self.image.last!
         
