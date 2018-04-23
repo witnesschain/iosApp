@@ -85,10 +85,9 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
             var imgname : String = ""
             var ct : Int = 0
             var picture : UIImage
-            let range = self.image.count + self.edited_images.count
+            let range = self.image.count + self.edited_images.count - 1
             for i in 0...range {
-                let imageName:String = String("\(curtime)-\(ct).jpg")
-                ct += 1
+                let imageName:String = String("\(curtime)-\(i).jpg")
                 let storageRef = self.storage.reference().child("evidence").child(imageName)
                 if i < self.image.count{
                     picture = self.image[i]!
@@ -103,10 +102,7 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
                             print(error!)
                             return
                         }
-                        else{
-                            
-                        }
-                    
+                        ct += 1
                         let strPic:String = (metadata?.downloadURL()?.absoluteString)!
                     
                         imgname = (metadata?.name)!
@@ -129,7 +125,11 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
                             blurred_images.append(imgname)
                         }
                         
+                        print(ct)
+                        print(range)
+                        
                         if ct == range {
+                            print("ello")
                             let url = URL(string: self.appDelegate.baseUrl + "/new")!
                             let parameters : [String:Any] = ["clear_images": images,
                                                              "blurred_images": blurred_images,
