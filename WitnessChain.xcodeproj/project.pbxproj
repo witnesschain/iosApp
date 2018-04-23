@@ -20,6 +20,7 @@
 		FC4C2081207EEB930049AE4B /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C2080207EEB930049AE4B /* UserInfoViewController.swift */; };
 		FC5E208B2077273F001EBA83 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E208A2077273F001EBA83 /* TransactionsViewController.swift */; };
 		FC5E208D207738B4001EBA83 /* ScrollPagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E208C207738B4001EBA83 /* ScrollPagesController.swift */; };
+		FC6E4FAD208DBEF200F1DBF4 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E4FAC208DBEF200F1DBF4 /* DrawingViewController.swift */; };
 		FCEEC0672072CD23009BE41D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCEEC0662072CD22009BE41D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		FC4C2080207EEB930049AE4B /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		FC5E208A2077273F001EBA83 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		FC5E208C207738B4001EBA83 /* ScrollPagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPagesController.swift; sourceTree = "<group>"; };
+		FC6E4FAC208DBEF200F1DBF4 /* DrawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		FCEEC0662072CD22009BE41D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "WitnessChain/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				FC2E8203207EA250002D04C7 /* AuthViewController.swift */,
 				FC5E208A2077273F001EBA83 /* TransactionsViewController.swift */,
 				B3119F962071E903006A329B /* PreviewViewController.swift */,
+				FC6E4FAC208DBEF200F1DBF4 /* DrawingViewController.swift */,
 				FC5E208C207738B4001EBA83 /* ScrollPagesController.swift */,
 				B3119F8B2071E029006A329B /* LaunchScreen.storyboard */,
 				B3119F8E2071E029006A329B /* Info.plist */,
@@ -265,6 +268,7 @@
 				FC2E8206207EB7C3002D04C7 /* WalletViewController.swift in Sources */,
 				FC5E208D207738B4001EBA83 /* ScrollPagesController.swift in Sources */,
 				FC2E8202207E8B54002D04C7 /* ProgressHUD.swift in Sources */,
+				FC6E4FAD208DBEF200F1DBF4 /* DrawingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

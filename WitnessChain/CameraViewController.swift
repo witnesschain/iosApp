@@ -27,6 +27,7 @@ class CameraViewController: UIViewController {
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
     
     var image: [UIImage?] = []
+    var edited_images: [UIImage?] = []
 
     var ref: DatabaseReference! = Database.database().reference()
     
@@ -110,6 +111,7 @@ class CameraViewController: UIViewController {
             print (self.image)
             print (previewVC.image)
             previewVC.image = self.image
+            previewVC.edited_images = self.edited_images
         }
     }
 
