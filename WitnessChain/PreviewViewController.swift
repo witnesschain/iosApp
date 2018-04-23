@@ -72,19 +72,27 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
             let imageName:String = String("\(curtime).jpg")
         
             let storageRef = self.storage.reference().child("evidence").child(imageName)
-            if let uploadData = UIImageJPEGRepresentation(self.image.last!!, 0.75) {
-                
-                storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+            var images : [String] = []
+            var imgname : String = ""
+            for picture in self.image{
+                if let uploadData = UIImageJPEGRepresentation(picture!, 0.75) {
+                    storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
                         if error != nil {
                             print("error")
                             print(error!)
                             return
-                        }else{
+                        }
+                        else{
+                            
                         }
                     
                         let strPic:String = (metadata?.downloadURL()?.absoluteString)!
                     
-                        let imgname:String = (metadata?.name)!
+                        imgname = (metadata?.name)!
+                        
+                        let idx = imgname.index(imgname.endIndex, offsetBy: -4)
+                        let imgshort = String(imgname[..<idx])
+                        self.ref.child("users").child(self.user!.uid).child("evidences").child(imgshort).setValue(imgname)
                     
                         print(metadata!)
                         //self.imagePath = (metadata?.downloadURL()?.absoluteString)!
@@ -93,59 +101,55 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
                     
                         print("\n\n ===image name : \(imgname)")
                     
-                        let url = URL(string: self.appDelegate.baseUrl + "/new")!
+                        
                     
-                        let images = [imgname]
+                        images.append(imgname)
                     
-                        // TODO: REPLACE WITH REAL PARAMS like ref.child("users").child(user!.uid) address
-                    
-                        let parameters : [String:Any] = ["clear_images": images,
-                                          "blurred_images": images,
-                                          "latitude": Int(userLocation.coordinate.latitude*8),
-                                          "longitude": Int(userLocation.coordinate.longitude*8),
-                                          "price": "1000",
-                                          "description": "parking",
-                                          "creator_address": "0x821aEa9a577a9b44299B9c15c88cf3087F3b5544",
-                                          "receiver_address": "0x0d1d4e623D10F9FBA5Db95830F7d3839406C6AF2",
-                                          "violation_type": 1
-                            ]
-                        let idx = imgname.index(imgname.endIndex, offsetBy: -4)
-                        let imgshort = String(imgname[..<idx])
-                    self.ref.child("users").child(self.user!.uid).child("evidences").child(imgshort).setValue(imgname)
-                    
-                        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
-                            print("Request: \(String(describing: response.request))")   // original url request
-                            print("Response: \(String(describing: response.response))") // http url response
-                            print("Result: \(response.result)")                         // response serialization result
-                            
-                            if let json = response.result.value {
-                                print("JSON: \(json)") // serialized json response
-                            }
-                            
-                            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                                print("Data: \(utf8Text)") // original server data as UTF8 string
-//                                self.dismiss(animated: true, completion: nil) // dismiss the image preview somehow
-                                let alertController = UIAlertController(title: "WitnessChain", message:
-                                    "Image uploaded to Server: \(strPic)", preferredStyle: UIAlertControllerStyle.alert)
-                                alertController.addAction(UIAlertAction(title: "Great!", style: UIAlertActionStyle.destructive, handler: {
-                                    action in                                    self.navigationController?.popViewController(animated: true)
-                                    
-                                        self.dismiss(animated: true, completion: nil)
-                                    }))
-                                
-                                self.present(alertController, animated: true, completion: nil)
-                                
-                                progressHUD.hide()
-                            }
-                        }
-                    
-                })
+                        })
+                }
+            }
+            let url = URL(string: self.appDelegate.baseUrl + "/new")!
+            let parameters : [String:Any] = ["clear_images": images,
+                                             "blurred_images": images,
+                                             "latitude": Int(userLocation.coordinate.latitude*8),
+                                             "longitude": Int(userLocation.coordinate.longitude*8),
+                                             "price": "1000",
+                                             "description": "parking",
+                                             "creator_address": "0x821aEa9a577a9b44299B9c15c88cf3087F3b5544",
+                                             "receiver_address": "0x0d1d4e623D10F9FBA5Db95830F7d3839406C6AF2",
+                                             "violation_type": 1
+            ]
+
+            
+            Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+                print("Request: \(String(describing: response.request))")   // original url request
+                print("Response: \(String(describing: response.response))") // http url response
+                print("Result: \(response.result)")                         // response serialization result
                 
+                if let json = response.result.value {
+                    print("JSON: \(json)") // serialized json response
+                }
+                
+                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                    print("Data: \(utf8Text)") // original server data as UTF8 string
+                    //                                self.dismiss(animated: true, completion: nil) // dismiss the image preview somehow
+                    let alertController = UIAlertController(title: "WitnessChain", message:
+                        "Image uploaded to Server: :)", preferredStyle: UIAlertControllerStyle.alert)
+                    alertController.addAction(UIAlertAction(title: "Great!", style: UIAlertActionStyle.destructive, handler: {
+                        action in                                    self.navigationController?.popViewController(animated: true)
+                        
+                        self.dismiss(animated: true, completion: nil)
+                    }))
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                    progressHUD.hide()
+                }
             }
         }) { (err, last) -> (Void) in
             print("Failed to get location: \(err)")
+            
         }
-        
     }
     
     @IBAction func saveButton_TouchUpInside(_ sender: Any) {
@@ -176,3 +180,4 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
     */
 
 }
+
