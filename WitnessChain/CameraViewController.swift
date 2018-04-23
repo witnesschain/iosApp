@@ -45,6 +45,10 @@ class CameraViewController: UIViewController {
     @IBAction func swipe_right(_ sender: UISwipeGestureRecognizer) {
     }
     
+    @IBAction func nextPhotoButton(_ sender: Any) {
+        performSegue(withIdentifier: "nextPhoto_Segue", sender: nil)
+    }
+    
     func setupCaptureSession() {
         captureSession.sessionPreset = AVCaptureSession.Preset.photo
         
@@ -103,12 +107,9 @@ class CameraViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "showPhoto_Segue"{
             let previewVC = segue.destination as! PreviewViewController
-            self.image.append(previewVC.image)
-            performSegue(withIdentifier: "nextPhoto_Segue", sender: nil)
-        }
-        if segue.identifier == "nextPhoto_Segue"{
-            let _ = segue.destination as! CameraViewController
-            
+            print (self.image)
+            print (previewVC.image)
+            previewVC.image = self.image
         }
     }
 

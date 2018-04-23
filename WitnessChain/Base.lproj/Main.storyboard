@@ -270,7 +270,7 @@
         <!--Preview View Controller-->
         <scene sceneID="kQk-6P-DYv">
             <objects>
-                <viewController id="9Ka-Ih-tOx" customClass="PreviewViewController" customModule="WitnessChain" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9Ka-Ih-tOx" customClass="PreviewViewController" customModule="WitnessChain" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iTa-Qa-Vcx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -346,8 +346,8 @@
                         <viewLayoutGuide key="safeArea" id="0I5-YV-U5P"/>
                     </view>
                     <connections>
-                        <outlet property="nextPhotoButton" destination="uW9-6w-bbP" id="NkG-bY-UnS"/>
                         <outlet property="photo" destination="XZf-Re-xwb" id="abv-EF-gea"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="nextPhoto_Segue" id="h7h-kq-Vmv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2T-P8-W5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -356,6 +356,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="h7h-kq-Vmv"/>
         <segue reference="atB-MG-sx4"/>
     </inferredMetricsTieBreakers>
 </document>

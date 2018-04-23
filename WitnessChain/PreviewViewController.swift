@@ -14,10 +14,8 @@ import SwiftLocation
 
 class PreviewViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var photo: UIImageView!
-    var image: UIImage!
-    //var image2: UIImage!
-    //var image3: UIImage!
-    //var image4: UIImage!
+    var image: [UIImage?] = []
+
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -28,7 +26,11 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        photo.image = self.image
+        print ("------")
+        print (self.image)
+        print (photo.image)
+        print ("------")
+        photo.image = self.image.last!
         
         ref = Database.database().reference()
         
@@ -45,7 +47,7 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @IBAction func nextPhotoButton(_ sender: Any) {
-        
+        performSegue(withIdentifier: "nextPhoto_Segue", sender: nil)
     }
     
     @IBAction func uploadButton_TouchUpInside(_ sender: Any) {
@@ -62,7 +64,7 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
             let imageName:String = String("\(curtime).jpg")
         
             let storageRef = self.storage.reference().child("evidence").child(imageName)
-            if let uploadData = UIImageJPEGRepresentation(self.image!, 0.75) {
+            if let uploadData = UIImageJPEGRepresentation(self.image.last!!, 0.75) {
                 
                 storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
                         if error != nil {
@@ -140,7 +142,7 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func saveButton_TouchUpInside(_ sender: Any) {
         
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        UIImageWriteToSavedPhotosAlbum(image.last!!, nil, nil, nil)
         
         let alertController = UIAlertController(title: "WitnessChain", message:
             "Image evidence saved to Camera Roll", preferredStyle: UIAlertControllerStyle.alert)
