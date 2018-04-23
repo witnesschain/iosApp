@@ -111,8 +111,6 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
                     
                         print("\n\n ===image name : \(imgname)")
                     
-                        
-                    
                         images.append(imgname)
                     
                         })
