@@ -81,14 +81,22 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
             print("Have user's location: \(userLocation) and time \(curtime)")
     
             var images : [String] = []
+            var blurred_images : [String] = []
             var imgname : String = ""
             var ct : Int = 0
-            for picture in self.image {
+            var picture : UIImage
+            let range = self.image.count + self.edited_images.count
+            for i in 0...range {
                 let imageName:String = String("\(curtime)-\(ct).jpg")
                 ct += 1
                 let storageRef = self.storage.reference().child("evidence").child(imageName)
-                
-                if let uploadData = UIImageJPEGRepresentation(picture!, 0.75) {
+                if i < self.image.count{
+                    picture = self.image[i]!
+                }
+                else{
+                    picture = self.edited_images[i - self.image.count]!
+                }
+                if let uploadData = UIImageJPEGRepresentation(picture, 0.75) {
                     storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
                         if error != nil {
                             print("error")
@@ -105,7 +113,7 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
                         
                         let idx = imgname.index(imgname.endIndex, offsetBy: -4)
                         let imgshort = String(imgname[..<idx])
-                    self.ref.child("users").child(self.user!.uid).child("evidences").child(imgshort).setValue(imgname)
+                        self.ref.child("users").child(self.user!.uid).child("evidences").child(imgshort).setValue(imgname)
                     
                         print(metadata!)
                         //self.imagePath = (metadata?.downloadURL()?.absoluteString)!
@@ -113,13 +121,18 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
                         print("\n\n ===download url : \(strPic)")
                     
                         print("\n\n ===image name : \(imgname)")
-                    
-                        images.append(imgname)
                         
-                        if ct == images.count {
+                        if i < self.image.count{
+                            images.append(imgname)
+                        }
+                        else{
+                            blurred_images.append(imgname)
+                        }
+                        
+                        if ct == range {
                             let url = URL(string: self.appDelegate.baseUrl + "/new")!
                             let parameters : [String:Any] = ["clear_images": images,
-                                                             "blurred_images": images,
+                                                             "blurred_images": blurred_images,
                                                              "latitude": Int(userLocation.coordinate.latitude*8),
                                                              "longitude": Int(userLocation.coordinate.longitude*8),
                                                              "price": "1000",
