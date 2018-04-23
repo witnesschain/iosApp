@@ -8,13 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DrawingViewController: UIViewController {
 
     
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var image: [UIImage?] = []
+    var edited_images: [UIImage?] = []
     
     var lastPoint = CGPoint.zero
     var swiped = false
+    
     
     
     override func viewDidLoad() {
@@ -65,6 +70,18 @@ class ViewController: UIViewController {
         }
     }
 
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "doneEditImage", sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "doneEditImage"{
+            let previewVC = segue.destination as! PreviewViewController
+            print (self.image)
+            print (previewVC.image)
+            previewVC.image = self.image
+            previewVC.edited_images = self.edited_images
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -15,7 +15,7 @@ import SwiftLocation
 class PreviewViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var photo: UIImageView!
     var image: [UIImage?] = []
-
+    var edited_images: [UIImage?] = []
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -45,16 +45,26 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func editImagePress(_ sender: Any) {
+        performSegue(withIdentifier: "editImage", sender: nil)
+    }
     
     @IBAction func nextPhotoButton(_ sender: Any) {
         performSegue(withIdentifier: "nextPhoto_Segue", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        if segue.identifier == "nextPhoto_Segue"{
+        if segue.identifier == "nextPhoto_Segue" {
             let cameraVC = segue.destination as! CameraViewController
             print (self.image)
             print (cameraVC.image)
             cameraVC.image = self.image
+            cameraVC.edited_images = self.edited_images
+        } else if segue.identifier == "editImage" {
+            let drawVC = segue.destination as! DrawingViewController
+            print (self.image)
+            print (drawVC.image)
+            drawVC.image = self.image
+            drawVC.edited_images = self.edited_images
         }
     }
     

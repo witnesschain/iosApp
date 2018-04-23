@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hYP-ox-rg5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14111" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hYP-ox-rg5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -311,13 +311,23 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7v-JL-Oh8">
-                                        <rect key="frame" x="100" y="15" width="50" height="30"/>
+                                        <rect key="frame" x="69" y="15" width="50" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Upload">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="uploadButton_TouchUpInside:" destination="9Ka-Ih-tOx" eventType="touchUpInside" id="uT7-3b-KkT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ck9-zl-vNc">
+                                        <rect key="frame" x="144" y="15" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Edit">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="editImagePress:" destination="9Ka-Ih-tOx" eventType="touchUpInside" id="w4B-t7-NYz"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -348,15 +358,51 @@
                     <connections>
                         <outlet property="photo" destination="XZf-Re-xwb" id="abv-EF-gea"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="nextPhoto_Segue" id="h7h-kq-Vmv"/>
+                        <segue destination="J9J-Dw-Vtk" kind="show" identifier="editImage" id="v7B-Yc-rMt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2T-P8-W5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="670" y="905"/>
+            <point key="canvasLocation" x="669.60000000000002" y="904.49775112443785"/>
+        </scene>
+        <!--Drawing View Controller-->
+        <scene sceneID="TwB-nx-3jC">
+            <objects>
+                <viewController id="J9J-Dw-Vtk" customClass="DrawingViewController" customModule="WitnessChain" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tme-16-teG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yL1-Mk-iTP">
+                                <rect key="frame" x="0.0" y="51" width="375" height="616"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qf6-yO-QIf">
+                                <rect key="frame" x="169" y="13" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="J9J-Dw-Vtk" eventType="touchUpInside" id="f7o-NQ-DfP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="DFL-jS-CEr"/>
+                    </view>
+                    <connections>
+                        <outlet property="doneButton" destination="qf6-yO-QIf" id="5bI-85-KhJ"/>
+                        <outlet property="imageView" destination="yL1-Mk-iTP" id="HcE-EV-jce"/>
+                        <segue destination="9Ka-Ih-tOx" kind="show" identifier="doneEditImage" id="1sg-ec-DJU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="exf-b0-O6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1512.8" y="903.59820089955031"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="h7h-kq-Vmv"/>
+        <segue reference="v7B-Yc-rMt"/>
+        <segue reference="1sg-ec-DJU"/>
         <segue reference="atB-MG-sx4"/>
     </inferredMetricsTieBreakers>
 </document>
