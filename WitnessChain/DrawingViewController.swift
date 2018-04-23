@@ -25,6 +25,7 @@ class DrawingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        imageView.image = image.last!
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -71,6 +72,7 @@ class DrawingViewController: UIViewController {
     }
 
     @IBAction func doneButtonPressed(_ sender: Any) {
+        edited_images.append(imageView.image)
         performSegue(withIdentifier: "doneEditImage", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
