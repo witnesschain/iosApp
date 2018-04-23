@@ -26,7 +26,7 @@ class CameraViewController: UIViewController {
     
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
     
-    var image: UIImage?
+    var image: [UIImage?] = []
 
     var ref: DatabaseReference! = Database.database().reference()
     
@@ -103,7 +103,12 @@ class CameraViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "showPhoto_Segue"{
             let previewVC = segue.destination as! PreviewViewController
-            previewVC.image = self.image
+            self.image.append(previewVC.image)
+            performSegue(withIdentifier: "nextPhoto_Segue", sender: nil)
+        }
+        if segue.identifier == "nextPhoto_Segue"{
+            let _ = segue.destination as! CameraViewController
+            
         }
     }
 
@@ -113,7 +118,7 @@ class CameraViewController: UIViewController {
 extension CameraViewController: AVCapturePhotoCaptureDelegate{
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
-            image = UIImage(data: imageData)
+            image.append(UIImage(data: imageData))
             performSegue(withIdentifier: "showPhoto_Segue", sender: nil)
         }
     }

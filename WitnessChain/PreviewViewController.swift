@@ -15,6 +15,9 @@ import SwiftLocation
 class PreviewViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var photo: UIImageView!
     var image: UIImage!
+    //var image2: UIImage!
+    //var image3: UIImage!
+    //var image4: UIImage!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -34,11 +37,14 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         Locator.requestAuthorizationIfNeeded()
-
     }
     
     @IBAction func dismissButton_TouchUpInside(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func nextPhotoButton(_ sender: Any) {
         
     }
     
