@@ -27,7 +27,6 @@ class WalletViewController: UIViewController {
         ref = Database.database().reference()
         
         userEmail.text = user?.email
-        
     self.ref.child("users").child(user!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary

@@ -49,6 +49,14 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func nextPhotoButton(_ sender: Any) {
         performSegue(withIdentifier: "nextPhoto_Segue", sender: nil)
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "nextPhoto_Segue"{
+            let cameraVC = segue.destination as! CameraViewController
+            print (self.image)
+            print (cameraVC.image)
+            cameraVC.image = self.image
+        }
+    }
     
     @IBAction func uploadButton_TouchUpInside(_ sender: Any) {
         
