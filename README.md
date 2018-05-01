@@ -6,7 +6,6 @@ Begin with a working installation of XCode. Clone our iosApp repository in your 
 
 ```
 git clone https://github.com/witnesschain/server
-
 ```
 After that, open up Xcode and open any file within your newly cloned folder. This should get you to a screen that looks like this:
 
@@ -16,11 +15,11 @@ However, before installing our app on your phone, you will have to hardcode the 
 
 <TODO: Add picture of terminal running server>
 
-Then, navigate to the '''appDelegate.swift''' tab on the left, and look for line 19 of the code. You should see something that says
+Then, navigate to the ```appDelegate.swift``` tab on the left, and look for line 19 of the code. You should see something that says
 
-'''
+```
 let baseUrl: String = "http://10.xxx.xxx.xx:xxxx"
-'''
+```
 
 Replace this string with your address that was given through your server terminal. Then, plug in an iPhone to your computer, ensure that it is selected as the target device in the top left corner, and hit play. The app should be running on your phone now.
 
