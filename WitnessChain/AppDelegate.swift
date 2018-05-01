@@ -13,7 +13,14 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let baseUrl: String = "http://10.251.217.248:3000"
+    
+    //
+    //
+    // YOU MUST UPDATE THIS TO YOUR NODE.JS SERVER URL BEFORE BUILDING THE APP!
+    let baseUrl: String = "http://10.252.147.83:3000"
+    //
+    //
+    //
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
