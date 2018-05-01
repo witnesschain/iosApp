@@ -21,6 +21,12 @@
 		FC5E208B2077273F001EBA83 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E208A2077273F001EBA83 /* TransactionsViewController.swift */; };
 		FC5E208D207738B4001EBA83 /* ScrollPagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E208C207738B4001EBA83 /* ScrollPagesController.swift */; };
 		FC6E4FAD208DBEF200F1DBF4 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E4FAC208DBEF200F1DBF4 /* DrawingViewController.swift */; };
+		FC6E4FB4208E49A100F1DBF4 /* icons8-pencil-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6E4FAE208E499F00F1DBF4 /* icons8-pencil-50.png */; };
+		FC6E4FB5208E49A100F1DBF4 /* icons8-installing-updates-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6E4FAF208E49A000F1DBF4 /* icons8-installing-updates-50.png */; };
+		FC6E4FB6208E49A100F1DBF4 /* icons8-plus-math-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6E4FB0208E49A000F1DBF4 /* icons8-plus-math-50.png */; };
+		FC6E4FB7208E49A100F1DBF4 /* icons8-upload-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6E4FB1208E49A000F1DBF4 /* icons8-upload-50.png */; };
+		FC6E4FB8208E49A100F1DBF4 /* icons8-checkmark-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6E4FB2208E49A000F1DBF4 /* icons8-checkmark-50.png */; };
+		FC6E4FB9208E49A100F1DBF4 /* icons8-delete-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6E4FB3208E49A100F1DBF4 /* icons8-delete-50.png */; };
 		FCEEC0672072CD23009BE41D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCEEC0662072CD22009BE41D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +49,12 @@
 		FC5E208A2077273F001EBA83 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		FC5E208C207738B4001EBA83 /* ScrollPagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPagesController.swift; sourceTree = "<group>"; };
 		FC6E4FAC208DBEF200F1DBF4 /* DrawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
+		FC6E4FAE208E499F00F1DBF4 /* icons8-pencil-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-pencil-50.png"; path = "IconImages.xcassets/icons8-pencil-50.png"; sourceTree = "<group>"; };
+		FC6E4FAF208E49A000F1DBF4 /* icons8-installing-updates-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-installing-updates-50.png"; path = "IconImages.xcassets/icons8-installing-updates-50.png"; sourceTree = "<group>"; };
+		FC6E4FB0208E49A000F1DBF4 /* icons8-plus-math-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-plus-math-50.png"; path = "IconImages.xcassets/icons8-plus-math-50.png"; sourceTree = "<group>"; };
+		FC6E4FB1208E49A000F1DBF4 /* icons8-upload-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-upload-50.png"; path = "IconImages.xcassets/icons8-upload-50.png"; sourceTree = "<group>"; };
+		FC6E4FB2208E49A000F1DBF4 /* icons8-checkmark-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-checkmark-50.png"; path = "IconImages.xcassets/icons8-checkmark-50.png"; sourceTree = "<group>"; };
+		FC6E4FB3208E49A100F1DBF4 /* icons8-delete-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-delete-50.png"; path = "IconImages.xcassets/icons8-delete-50.png"; sourceTree = "<group>"; };
 		FCEEC0662072CD22009BE41D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "WitnessChain/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +113,12 @@
 				B3119F822071E027006A329B /* AppDelegate.swift */,
 				B3119F842071E027006A329B /* CameraViewController.swift */,
 				B3119F862071E027006A329B /* Main.storyboard */,
+				FC6E4FB2208E49A000F1DBF4 /* icons8-checkmark-50.png */,
+				FC6E4FB3208E49A100F1DBF4 /* icons8-delete-50.png */,
+				FC6E4FAF208E49A000F1DBF4 /* icons8-installing-updates-50.png */,
+				FC6E4FAE208E499F00F1DBF4 /* icons8-pencil-50.png */,
+				FC6E4FB0208E49A000F1DBF4 /* icons8-plus-math-50.png */,
+				FC6E4FB1208E49A000F1DBF4 /* icons8-upload-50.png */,
 				FC4C2080207EEB930049AE4B /* UserInfoViewController.swift */,
 				FC2E8205207EB7C3002D04C7 /* WalletViewController.swift */,
 				FC2E8203207EA250002D04C7 /* AuthViewController.swift */,
@@ -176,10 +194,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC6E4FB5208E49A100F1DBF4 /* icons8-installing-updates-50.png in Resources */,
+				FC6E4FB4208E49A100F1DBF4 /* icons8-pencil-50.png in Resources */,
 				B3119F8D2071E029006A329B /* LaunchScreen.storyboard in Resources */,
+				FC6E4FB8208E49A100F1DBF4 /* icons8-checkmark-50.png in Resources */,
 				FCEEC0672072CD23009BE41D /* GoogleService-Info.plist in Resources */,
+				FC6E4FB9208E49A100F1DBF4 /* icons8-delete-50.png in Resources */,
 				B3119F882071E027006A329B /* Main.storyboard in Resources */,
 				B35386FE20722DEB00254A96 /* IconImages.xcassets in Resources */,
+				FC6E4FB6208E49A100F1DBF4 /* icons8-plus-math-50.png in Resources */,
+				FC6E4FB7208E49A100F1DBF4 /* icons8-upload-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

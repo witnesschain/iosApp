@@ -43,7 +43,7 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func dismissButton_TouchUpInside(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "dismisspreview", sender: nil)
     }
     
     @IBAction func editImagePress(_ sender: Any) {
