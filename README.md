@@ -9,11 +9,11 @@ git clone https://github.com/witnesschain/server
 ```
 After that, open up Xcode and open any file within your newly cloned folder. This should get you to a screen that looks like this:
 
-<TODO: Add picture of Xcode Start Screen>
+![XCode Start Screen](images/xcode.png)
 
 However, before installing our app on your phone, you will have to hardcode the address of the server that you started in the server Quickstart guide. You can locate the url in the terminal where you are running the server. It should look like this:
 
-<TODO: Add picture of terminal running server>
+![Server Running](images/terminal.png)
 
 Then, navigate to the ```appDelegate.swift``` tab on the left, and look for line 19 of the code. You should see something that says
 
@@ -30,7 +30,7 @@ The app begins with a login screen. Enter your credentials, and create an accoun
 
 <TODO: Add picture of login screen>
 
-Then, link your account to your Etherium public address. This will ensure your wallet is the same as your public one, if you already have one.
+Then, link your account to your Ethereum public address. This will ensure your wallet is the same as your public one, if you already have one.
 
 <TODO: Add picture of public address screen>
 

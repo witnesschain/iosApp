@@ -27,9 +27,10 @@
                                     <action selector="loginActionWithSender:" destination="hYP-ox-rg5" eventType="touchUpInside" id="Yam-Qb-c9Z"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z1l-Vj-Thq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z1l-Vj-Thq">
                                 <rect key="frame" x="66" y="103" width="242" height="242"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -411,6 +412,7 @@
         <image name="icons8-pencil-50.png" width="50" height="50"/>
         <image name="icons8-plus-math-50.png" width="50" height="50"/>
         <image name="icons8-upload-50.png" width="50" height="50"/>
+        <image name="logo.png" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Ddn-mo-eOe"/>
