@@ -135,7 +135,7 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
                                                              "blurred_images": blurred_images,
                                                              "latitude": Int(userLocation.coordinate.latitude*8),
                                                              "longitude": Int(userLocation.coordinate.longitude*8),
-                                                             "price": "1000",
+                                                             "price": "5000000000000000000", // 5 ether, in wei
                                                              "description": "parking",
                                                              "creator_address": "0x821aEa9a577a9b44299B9c15c88cf3087F3b5544",
                                                              "receiver_address": "0x0d1d4e623D10F9FBA5Db95830F7d3839406C6AF2",
