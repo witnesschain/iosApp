@@ -39,19 +39,19 @@ Then, link your account to your Ethereum public address. This will ensure your w
 
 ![Public Key Screen](images/publickey.PNG)
 
-Now, you should have arrived at the photo screen. Here, you can submit evidence to your police station. This begins by snapping a picture of an illegally parked car. You may have to take many pictures, to capture the situation. If so, use the next button, highlighted below.
+Now, you should have arrived at the photo screen. Here, you can submit evidence to your local police station. First, snap a picture of the illegally-parked car. Be sure that one photo contains both the license plate *and* the evidence of illegal parking (such as a parking meter at 00:00 or a "No Parking" sign). You may have to take many pictures to capture the situation. If so, use the next button, highlighted below.
 
 ![Next Screen](images/next.png)
 
-For each photo, you must blur out any identification information. To do that, hit the edit button shown below.
+For each photo, you must blur out any information that would identify the car, most notably the license plate number. To do that, hit the edit button shown below.
 
 ![Edit Screen](images/edit.png)
 
-After that, you can draw over any licence plates. If you want to save any photos to your camera roll, you do so by hitting the save button.
+Then you can draw over any identifiable information like license plate numbers. If you want to save any photos to your camera roll, you do so by hitting the save button.
 
 ![Save Screen](images/save.png)
 
-After you have taken all your pictures, simply hit the upload button to send them to your police station.
+After you have taken all your pictures, simply hit the upload button to send your pictures to your police station.
 
 ![Upload Screen](images/upload.png)
 
