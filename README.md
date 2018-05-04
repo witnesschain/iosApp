@@ -57,3 +57,6 @@ After you have taken all your pictures, simply hit the upload button to send you
 
 That is WitnessChain!
 
+## Files and Folders 
+
+The real code behind our app is in the `WitnessChain` folder. Images and other assets used in the app are in `WitnessChain/IconImages.xcassets`.
