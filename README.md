@@ -33,7 +33,7 @@ Then, plug in an iPhone to your computer, ensure that it is selected as the targ
 
 The app begins with a login screen. Enter your credentials and create an account if you do not already have one.
 
-![Server Running](images/signin.png)
+![Sign In](images/signin.png)
 
 Then, link your account to your Ethereum public address. This will ensure your wallet is the same as your public one, if you already have one.
 
