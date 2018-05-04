@@ -36,19 +36,19 @@ Then, link your account to your Ethereum public address. This will ensure your w
 
 Now, you should have arrived at the photo screen. Here, you can submit evidence to your police station. This begins by snapping a picture of an illegally parked car. You may have to take many pictures, to capture the situation. If so, use the next button, highlighted below.
 
-<TODO: Add picture of photos, pointing to next screen>
+![Next Screen](images/next.png)
 
 For each photo, you must blur out any identification information. To do that, hit the edit button shown below.
 
-<TODO: Add picture of edit button>
+![Edit Screen](images/edit.png)
 
 After that, you can draw over any licence plates. If you want to save any photos to your camera roll, you do so by hitting the save button.
 
-<TODO: Add picture of save button>
+![Save Screen](images/save.png)
 
 After you have taken all your pictures, simply hit the upload button to send them to your police station.
 
-<TODO: Add picture of upload button>
+![Upload Screen](images/upload.png)
 
 That is WitnessChain!
 
