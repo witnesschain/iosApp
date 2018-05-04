@@ -2,31 +2,36 @@
 
 ## Quickstart
 
-Begin with a working installation of XCode. Clone our iosApp repository in your folder of choice by running:
+First off, make sure you've [set up the WitnessChain server](https://github.com/witnesschain/server) and have started running the server. It should look like this:
+
+![Server running](images/npm-start-terminal.png)
+
+Now clone this repository by running:
 
 ```
-git clone https://github.com/witnesschain/server
+git clone https://github.com/witnesschain/iosApp
 ```
-After that, open up Xcode and open any file within your newly cloned folder. This should get you to a screen that looks like this:
+
+Now open XCode on your Mac. Make sure you've accepted the license agreements. Open up your newly-cloned folder. The splash screen of XCode should look like this:
 
 ![XCode Start Screen](images/xcode.png)
 
-However, before installing our app on your phone, you will have to hardcode the address of the server that you started in the server Quickstart guide. You can locate the url in the terminal where you are running the server. It should look like this:
+However, before installing our app on your phone, you will have to hardcode the address of the server in the app. Note the URL, which in this example is `http://10.252.147.83:3000`.
 
-![Server Running](images/terminal.png)
-
-Then, navigate to the ```appDelegate.swift``` tab on the left, and look for line 19 of the code. You should see something that says
+Then, navigate to the `appDelegate.swift` tab on the left, and look for a line that looks like this:
 
 ```
 let baseUrl: String = "http://10.xxx.xxx.xx:xxxx"
 ```
 
-Replace this string with your address that was given through your server terminal. Then, plug in an iPhone to your computer, ensure that it is selected as the target device in the top left corner, and hit play. The app should be running on your phone now.
+You can just Command-F for `let baseURL`. Replace the placeholder string with the URL of the server, which again was `http://10.252.147.83:3000` in our example. Again, replace the string with the unique address that *your* server gave.
+
+Then, plug in an iPhone to your computer, ensure that it is selected as the target device in the top left corner, and hit Play. The app should now be running on your phone!
 
 
 ## How to Use the App
 
-The app begins with a login screen. Enter your credentials, and create an account if you do not already have one.
+The app begins with a login screen. Enter your credentials and create an account if you do not already have one.
 
 ![Server Running](images/signin.png)
 
