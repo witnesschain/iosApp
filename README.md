@@ -1,7 +1,5 @@
 # WitnessChain iOS
 
-To watch our demo video, go to the following link: [Demo](https://www.youtube.com/watch?v=-Rm1n9U3wfQ).
-
 ## Quickstart
 
 First off, make sure you've [set up the WitnessChain server](https://github.com/witnesschain/server) and have started running the server. It should look like this:
