@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //
     //
     // YOU MUST UPDATE THIS TO YOUR NODE.JS SERVER URL BEFORE BUILDING THE APP!
-    let baseUrl: String = "http://10.252.147.83:3000"
+    let baseUrl: String = "http://10.251.79.52:3000"
     //
     //
     //

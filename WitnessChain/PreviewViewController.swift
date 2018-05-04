@@ -133,8 +133,8 @@ class PreviewViewController: UIViewController, CLLocationManagerDelegate {
                             let url = URL(string: self.appDelegate.baseUrl + "/new")!
                             let parameters : [String:Any] = ["clear_images": images,
                                                              "blurred_images": blurred_images,
-                                                             "latitude": Int(userLocation.coordinate.latitude*8),
-                                                             "longitude": Int(userLocation.coordinate.longitude*8),
+                                                             "latitude": Int(userLocation.coordinate.latitude*100000000),
+                                                             "longitude": Int(userLocation.coordinate.longitude*100000000),
                                                              "price": "5000000000000000000", // 5 ether, in wei
                                                              "description": "parking",
                                                              "creator_address": "0x821aEa9a577a9b44299B9c15c88cf3087F3b5544",

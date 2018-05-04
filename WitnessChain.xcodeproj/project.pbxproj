@@ -14,6 +14,7 @@
 		B3119F972071E903006A329B /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3119F962071E903006A329B /* PreviewViewController.swift */; };
 		B35386FE20722DEB00254A96 /* IconImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B35386FD20722DEB00254A96 /* IconImages.xcassets */; };
 		D7CAA9A22E6CA850330EE35E /* Pods_WitnessChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BD5457E5BDE1AA7C622751 /* Pods_WitnessChain.framework */; };
+		FC0D66A5209CEE0E0065D449 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0D66A4209CEE0D0065D449 /* logo.png */; };
 		FC2E8202207E8B54002D04C7 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E8201207E8B54002D04C7 /* ProgressHUD.swift */; };
 		FC2E8204207EA251002D04C7 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E8203207EA250002D04C7 /* AuthViewController.swift */; };
 		FC2E8206207EB7C3002D04C7 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E8205207EB7C3002D04C7 /* WalletViewController.swift */; };
@@ -42,6 +43,7 @@
 		B3119F962071E903006A329B /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		B35386FD20722DEB00254A96 /* IconImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = IconImages.xcassets; sourceTree = "<group>"; };
 		F9BD5457E5BDE1AA7C622751 /* Pods_WitnessChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WitnessChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC0D66A4209CEE0D0065D449 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = IconImages.xcassets/logo.png; sourceTree = "<group>"; };
 		FC2E8201207E8B54002D04C7 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		FC2E8203207EA250002D04C7 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		FC2E8205207EB7C3002D04C7 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				B3119F822071E027006A329B /* AppDelegate.swift */,
 				B3119F842071E027006A329B /* CameraViewController.swift */,
 				B3119F862071E027006A329B /* Main.storyboard */,
+				FC0D66A4209CEE0D0065D449 /* logo.png */,
 				FC6E4FB2208E49A000F1DBF4 /* icons8-checkmark-50.png */,
 				FC6E4FB3208E49A100F1DBF4 /* icons8-delete-50.png */,
 				FC6E4FAF208E49A000F1DBF4 /* icons8-installing-updates-50.png */,
@@ -196,6 +199,7 @@
 			files = (
 				FC6E4FB5208E49A100F1DBF4 /* icons8-installing-updates-50.png in Resources */,
 				FC6E4FB4208E49A100F1DBF4 /* icons8-pencil-50.png in Resources */,
+				FC0D66A5209CEE0E0065D449 /* logo.png in Resources */,
 				B3119F8D2071E029006A329B /* LaunchScreen.storyboard in Resources */,
 				FC6E4FB8208E49A100F1DBF4 /* icons8-checkmark-50.png in Resources */,
 				FCEEC0672072CD23009BE41D /* GoogleService-Info.plist in Resources */,
