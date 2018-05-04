@@ -28,11 +28,11 @@ Replace this string with your address that was given through your server termina
 
 The app begins with a login screen. Enter your credentials, and create an account if you do not already have one.
 
-<TODO: Add picture of login screen>
+![Server Running](images/signin.png)
 
 Then, link your account to your Ethereum public address. This will ensure your wallet is the same as your public one, if you already have one.
 
-<TODO: Add picture of public address screen>
+![Public Key Screen](images/publickey.png)
 
 Now, you should have arrived at the photo screen. Here, you can submit evidence to your police station. This begins by snapping a picture of an illegally parked car. You may have to take many pictures, to capture the situation. If so, use the next button, highlighted below.
 
